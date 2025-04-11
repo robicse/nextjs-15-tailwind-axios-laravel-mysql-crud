@@ -53,13 +53,15 @@ export default function PostDetail(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post(`http://127.0.0.1:8000/api/update-task/${id}`, { title, description, status });
+        // await axios.post(`http://127.0.0.1:8000/api/update-task/${id}`, { title, description, status });
+        await axios.put(`http://127.0.0.1:8000/api/update-task/${id}`, { title, description, status });
         setEditing(false);
         fetchPost();
     };
 
     const handleDelete = async () => {
-        await axios.post(`http://127.0.0.1:8000/api/delete-task/${id}`);
+        // await axios.post(`http://127.0.0.1:8000/api/delete-task/${id}`);
+        await axios.delete(`http://127.0.0.1:8000/api/delete-task/${id}`);
         router.push('/');
     };
 

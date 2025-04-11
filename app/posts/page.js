@@ -16,7 +16,7 @@ export default function Tasks() {
     },[])
 
     const handleDelete = async (id) => {
-        await axios.delete(`http://localhost:5000/posts/${id}`)
+        await axios.delete(`http://127.0.0.1:8000/api/delete-task/${id}`)
         const filterData = posts.filter(post => post.id != id)
         setPosts(filterData)
     }
